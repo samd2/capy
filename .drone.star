@@ -62,7 +62,7 @@ def main(ctx):
     ]
 
     jobs += [
-        freebsd_cxx("FreeBSD 15.0", "clang++-22",
+        freebsd_cxx("clang-22", "clang++-22",
             buildscript="drone", buildtype="boost",
             freebsd_version="15.0",
             environment={
