@@ -49,6 +49,27 @@ def main(ctx):
                 'B2_CXXFLAGS': '-fexperimental-library',
             },
             globalenv=globalenv),
+
+        osx_cxx("macOS: Clang 26.2.0", "clang++", packages="",
+            buildscript="drone", buildtype="boost",
+            xcode_version="16.2.0",
+            environment={
+                'B2_TOOLSET': 'clang',
+                'B2_CXXSTD': '20',
+                'B2_CXXFLAGS': '-fexperimental-library',
+            },
+            globalenv=globalenv),
+    ]
+
+    jobs += [
+        freebsd_cxx("FreeBSD 15.0", "clang++",
+            buildscript="drone", buildtype="boost",
+            freebsd_version="15.0",
+            environment={
+                'B2_TOOLSET': 'clang',
+                'B2_CXXSTD': '20',
+            },
+            globalenv=globalenv),
     ]
 
     # Jobs not covered by generate()
