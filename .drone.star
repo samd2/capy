@@ -52,7 +52,7 @@ def main(ctx):
 
         osx_cxx("macOS: Clang 26.2.0", "clang++", packages="",
             buildscript="drone", buildtype="boost",
-            xcode_version="16.2.0",
+            xcode_version="26.2.0",
             environment={
                 'B2_TOOLSET': 'clang',
                 'B2_CXXSTD': '20',
